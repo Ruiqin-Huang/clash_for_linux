@@ -1,0 +1,17 @@
+[Unit]
+Description=Clash for Linux Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=your_linux_username
+WorkingDirectory=/path/to/clash_for_linux
+# Assuming config.yaml is the configuration file name. 
+# If you use a different name, please update it here or rename your file.
+ExecStart=/path/to/clash_for_linux/clash-linux-amd64-v1.10.0 -f config.yaml -d .
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
