@@ -137,8 +137,8 @@ To keep Clash running in the background and start automatically on boot, you can
 
 3.  **Install Service**:
     ```bash
-    # Copy service file to system directory
-    sudo cp /path/to/clash_for_linux/clash-linux.service /etc/systemd/system/
+    # Copy service file to system directory (force overwrite if exists)
+    sudo cp -f /path/to/clash_for_linux/clash-linux.service /etc/systemd/system/
     
     # Reload systemd
     sudo systemctl daemon-reload
